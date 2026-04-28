@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>خريطة مشاريعي</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خريطة مشاريعنا - المهندس ياسر</title>
     <style>
-        /* حدد طول وعرض الخريطة */
-        #map { height: 500px; width: 100%; }
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        header { background: #004a99; color: white; text-align: center; padding: 15px; }
+        .map-container { width: 100%; height: 85vh; border: none; }
+        footer { text-align: center; padding: 10px; background: #333; color: white; position: fixed; bottom: 0; width: 100%; }
     </style>
 </head>
 <body>
 
-    <h2>خريطة انتشار مشاريعنا في المملكة</h2>
-    <div id="map"></div>
+<header>
+    <h1>خريطة انتشار مشاريعنا في المملكة</h1>
+    <p>مشاريع العزل والمقاولات - توثيق حي من المواقع</p>
+</header>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-        // إعداد الخريطة لتركز على السعودية
-        var map = L.map('map').setView([24.7136, 46.6753], 5); 
+<iframe class="map-container" src="_https://www.google.com/maps/d/u/0/" allowfullscreen></iframe>
 
-        // إضافة شكل الخريطة من OpenStreetMap (مجاني)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+<footer>
+    <p>جميع الحقوق محفوظة للمهندس ياسر &copy; 2024</p>
+</footer>
 
-        // إضافة نقاط (الرياض، جدة، مكة)
-        L.marker([24.7136, 46.6753]).addTo(map).bindPopup('مشاريعنا في الرياض');
-        L.marker([21.4858, 39.1925]).addTo(map).bindPopup('خدماتنا في جدة');
-        L.marker([21.3891, 39.8579]).addTo(map).bindPopup('خدماتنا في مكة');
-    </script>
-    <img src="Screenshot_22-2-2026_151452_media.istockphoto.com.jpeg" alt="">
 </body>
 </html>
