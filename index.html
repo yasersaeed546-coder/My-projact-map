@@ -3,24 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خريطة مشاريعنا - المهندس ياسر</title>
-    <style>
-        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
-        header { background: #004a99; color: white; text-align: center; padding: 15px; }
-        .map-container { width: 100%; height: 85vh; border: none; }
-        footer { text-align: center; padding: 10px; background: #333; color: white; position: fixed; bottom: 0; width: 100%; }
-    </style>
+    <title>الحمد للعوازل | سابقة أعمالنا</title>
+    <link rel="stylesheet" href="maap.css">
 </head>
 <body>
 
 <header>
-    <h1>خريطة انتشار مشاريعنا في المملكة</h1>
-    <p>مشاريع العزل والمقاولات - توثيق حي من المواقع</p>
+    <h1>الحمد للعوازل والمقاولات</h1>
+    <p>خبراء العزل المائي والحراري وكشف التسربات</p>
 </header>
-<iframe class="map-container" src="https://www.google.com/maps/d/u/0/embed?mid=1ZZwSf0nOeUicX2RysmLvvHlMYiH9ATU&ehbc=2E312F" allowfullscreen></iframe>
+
+<div class="container">
+    <section class="intro">
+        <h2>خريطة مشاريعنا التفاعلية</h2>
+        <p>نستعرض لكم مواقع تنفيذ مشاريعنا في أحياء الرياض وجدة.</p>
+    </section>
+
+    <div class="filter-buttons">
+        <button onclick="showMap('riyadh')" class="map-btn active" id="btn-riyadh">مشاريع الرياض</button>
+        <button onclick="showMap('jeddah')" class="map-btn" id="btn-jeddah">مشاريع جدة</button>
+    </div>
+
+    <div class="map-container">
+        <iframe id="mapFrame" src="https://www.google.com/maps/d/embed?mid=1rn3l0vqDwhm1aemBNxaOAABfXb1IbS8&ehbc=2E312F" width="100%" height="480"></iframe>
+    </div>
+
+    <div class="contact-section">
+        <h3>لطلب الخدمة أو الاستفسار:</h3>
+        <div class="contact-buttons">
+            <a href="tel:+9665XXXXXXXX" class="btn btn-call">📞 اتصل بنا</a>
+            <a href="https://wa.me/9661556735364" class="btn btn-whatsapp">💬 واتساب</a>
+        </div>
+    </div>
+</div>
+
 <footer>
-    <p>جميع الحقوق محفوظة للمهندس ياسر &copy; 2024</p>
+    <p>© 2026 شركة الحمد للعوازل - الرياض، السعودية</p>
 </footer>
+
+<script>
+function showMap(city) {
+    var frame = document.getElementById('mapFrame');
+    var btnR = document.getElementById('btn-riyadh');
+    var btnJ = document.getElementById('btn-jeddah');
+    
+    if (city === 'riyadh') {
+        // ضب رابط الرياض بين علامات التنصيص
+        frame.src = "https://www.google.com/maps/d/embed?mid=1rn3lOvqDwhmlaemBNxaOAABfXb1IbS8&ehbc=2E312F"; 
+        btnR.classList.add('active');
+        btnJ.classList.remove('active');
+    } else {
+        // ضع رابط جدة بين علامات التنصيص
+        frame.src = "https://www.google.com/maps/d/embed?mid=1HNYXG7v3J5tea0krw_xGoVSzRz7rJ9A&ehbc=2E312F"; 
+        btnJ.classList.add('active');
+        btnR.classList.remove('active');
+    }
+}
+</script>
 
 </body>
 </html>
